@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carta Inclusiva con Pictogramas - Municipalidad de Maipú</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffe3be;
+      margin: 0;
+      padding: 15px 10px 30px;
+      color: #000000;
+
+    }
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    header img {
+      width: 90px;
+      max-width: 100%;
+      height: auto;
+    }
+    h1 {
+      font-size: 26px;
+      color: #2c3e50;
+      margin: 10px 0 0;
+      font-weight: 700;
+    }
+    .frase-titulo {
+      text-align: center;
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #34495e;
+    }
+    .frase-container {
+      margin: 0 auto 20px;
+      padding: 12px 15px;
+      background: #fff8dc;
+      border-radius: 14px;
+      min-height: 70px;
+      max-width: 620px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .frase-item {
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 14px;
+      padding: 6px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      width: 75px;
+    }
+    .frase-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .frase-item span {
+      font-size: 14px;
+      margin-top: 6px;
+      text-align: center;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    .frase-item button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0;
+    }
+    .acciones {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Por si se achica la pantalla */
+  gap: 10px; /* Espacio entre botones */
+}
+
+.acciones button {
+  padding: 12px 28px;
+  font-size: 17px;
+  border: none;
+  border-radius: 16px;
+  background-color: #ff653f;
+  color: #0b0e11;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.acciones .repro {
+  background-color: #55d626e1;
+  color: #0b0e11;
+}
+    .categoria {
+      margin-bottom: 40px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .categoria h2 {
+      font-size: 20px;
+      margin-bottom: 18px;
+      color: #34495e;
+      border-bottom: 3px solid #f9d342;
+      padding-bottom: 6px;
+      font-weight: 700;
+    }
+    .pictogramas-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .pictograma {
+      background-color: #ffffff;
+      border-radius: 18px;
+      text-align: center;
+      padding: 12px 8px;
+      cursor: pointer;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+      width: 150px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .pictograma img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+    .pictograma span {
+      font-weight: 700;
+      font-size: 14px;
+      color: #2c3e50;
+    }
+    #frase:empty {
+  display: none;
+}
+    @media (max-width: 600px) {
+      
+      .frase-item {
+        width: 60px;
+      }
+      .frase-item span {
+        font-size: 12px;
+      }
+      .pictograma {
+        width: 100px;
+        height: 110px;
+        padding: 10px 6px;
+      }
+      .pictograma img {
+        width: 80px;
+        height: 80px;
+      }
+      .pictograma span {
+        font-size: 12px;
+      }
+      html{
+        font-size: 8px;
+      }
+    }
+    footer{
+      margin-bottom: 0;
+    }
+    .footer-picto {
+  background-color: #fff8dc;
+  border-top: 3px solid #f9d342;
+  padding: 20px 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+ 
+}
+
+.footer-picto {
+  background-color: #fffff5;
+  border-top: 2px solid #f9d342;
+  padding: 8px 8px;
+  text-align: center;
+  margin-top: 10px;
+
+  margin-bottom: 0; /* Elimina cualquier margen inferior */
+}
+
+
+.footer-picto .proyecto {
+  color: #e8672b;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .footer-picto p {
+    font-size: 14px;
+    font-weight: bolder;
+  }
+}
+ 
+    
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./imagenes/hola.png" alt="Logo Municipalidad de Maipú" />
+    <h1>Bienvenidos al Menu Azul</h1>
+  </header>
+  <div class="frase-titulo">Quisiera pedir...</div>
+  <div class="frase-container" id="frase"></div>
+  <div class="acciones">
+    <button class="repro" onclick="reproducirFrase()">🔊 Reproducir</button>
+    <button onclick="limpiarFrase()">🗑️ Limpiar</button>
+  </div>
+  <section class="categoria">
+    <h2>COMIDAS</h2>
+    <div class="pictogramas-container">
+      <div class="pictograma" onclick="agregarPictograma('hamburguesa', './imagenes/hamburguesa.jpg')">
+        <img src="./imagenes/hamburguesa.jpg" alt="hamburguesa" />
+        <span>Hamburguesa</span>
+      </div>
+
+      <div class="pictograma" onclick="agregarPictograma('pancho', './imagenes/pancho.jfif')">
+        <img src="./imagenes/pancho.jfif" alt="pancho" />
+        <span>pancho</span>
+      </div>
+       
+      <div class="pictograma" onclick="agregarPictograma('lomos', './imagenes/lomos.jfif')">
+        <img src="./imagenes/lomos.jfif" alt="lomos" />
+        <span>Lomo</span>
+      </div>
+      
+      
+      
+      <div class="pictograma" onclick="agregarPictograma('papas', './imagenes/papas.jfif')">
+        <img src="./imagenes/papas.jfif" alt="papas" />
+        <span>Papas</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('pizza', './imagenes/pizza.jfif')">
+        <img src="./imagenes/pizza.jfif" alt="pizza" />
+        <span>Pizza</span>
+      </div>
+      <div class="pictograma" onclick="agregarPictograma('empanadas', './imagenes/empanadas.jfif')">
+        <img src="./imagenes/empanadas.jfif" alt="empanadas" />
+        <span>Empanadas</span>
+      </div>
+
+      <div class="pictograma" onclick="agregarPictograma('tostados', './imagenes/tostados.jfif')">
+        <img src="./imagenes/tostados.jfif" alt="tostados" />
+        <span>Tostados</span>
+      </div>
+
+      <div class="pictograma" onclick="agregarPictograma('ensaladas', './imagenes/ensaladas.jfif')">
+        <img src="./imagenes/ensaladas.jfif" alt="ensaladas" />
+        <span>Ensalada</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('condimentos', './imagenes/condimentos.jfif')">
+        <img src="./imagenes/condimentos.jfif" alt="condimentos" />
+        <span>Condimentos</span>
+      </div>
+          
+      <div class="pictograma" onclick="agregarPictograma('cubiertos', './imagenes/cubiertos.jfif')">
+        <img src="./imagenes/cubiertos.jfif" alt="cubiertos" />
+        <span>Cubiertos</span>
+      </div>
+    
+      
+      <div class="pictograma" onclick="agregarPictograma('servilletas', './imagenes/servilletas.jfif')">
+        <img src="./imagenes/servilletas.jfif" alt="servilletas" />
+        <span>Servilletas</span>
+      </div>
+      
+      
+     
+    </div>
+  </section>
+  <section class="categoria">
+    <h2>BEBIDAS</h2>
+    <div class="pictogramas-container">
+      <div class="pictograma" onclick="agregarPictograma('agua', './imagenes/agua.jfif')">
+        <img src="./imagenes/agua.jfif" alt="agua" />
+        <span>Agua</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('cocacola', './imagenes/cocacola.jfif')">
+        <img src="./imagenes/cocacola.jfif" alt="cocacola" />
+        <span>Cocacola</span>
+      </div>
+      
+      
+      <div class="pictograma" onclick="agregarPictograma('fanta', './imagenes/fanta.jfif')">
+        <img src="./imagenes/fanta.jfif" alt="fanta" />
+        <span>Fanta</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('jugo de naranja', './imagenes/jugonaranja.jpg')">
+        <img src="./imagenes/jugonaranja.jpg" alt="jugo de naranja" />
+        <span>Jugo naranja</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('sprite', './imagenes/sprite.jfif')">
+        <img src="./imagenes/sprite.jfif" alt="sprite" />
+        <span>Sprite</span>
+      </div>
+    </div>
+  </section>
+  <section class="categoria">
+    <h2>FRASES</h2>
+    <div class="pictogramas-container">
+      <div class="pictograma" onclick="agregarPictograma('hola', './imagenes/hola.png')">
+        <img src="./imagenes/hola.png" alt="hola" />
+        <span>HOLA</span>
+      </div>
+      <div class="pictograma" onclick="agregarPictograma('gracias', './imagenes/gracias.png')">
+        <img src="./imagenes/gracias.png" alt="gracias" />
+        <span>GRACIAS</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('chau', './imagenes/chau.png')">
+        <img src="./imagenes/chau.png" alt="chau" />
+        <span>CHAU</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('la cuenta', './imagenes/cuenta.png')">
+        <img src="./imagenes/cuenta.png" alt="cuenta" />
+        <span>CUENTA</span>
+      </div>
+      
+      <div class="pictograma" onclick="agregarPictograma('el baño', './imagenes/baño.png')">
+        <img src="./imagenes/baño.png" alt="baño" />
+        <span>BAÑO</span>
+      </div>
+      
+    </div>
+  </section>
+  <footer class="footer-picto">
+    <div class="contenido-footer">
+      <p>Creado por <a href="https://pictocomunica.com.ar" target="_blank" class="proyecto">PictoComunica</a></p>
+      <p>Comunicación Aumentativa y Alternativa</p>
+    </div>
+  </footer>
+  
+  
+  <script>
+    let frase = [];
+  
+    function agregarPictograma(texto, imagen) {
+      frase.push({ texto, imagen });
+      reproducirPalabra(texto);
+      actualizarFrase();
+    }
+  
+    function eliminarElemento(index) {
+      frase.splice(index, 1);
+      actualizarFrase();
+    }
+  
+    function actualizarFrase() {
+      const contenedor = document.getElementById("frase");
+      contenedor.innerHTML = "";
+      frase.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "frase-item";
+        const img = document.createElement("img");
+        img.src = item.imagen;
+        div.appendChild(img);
+        const span = document.createElement("span");
+        span.innerText = item.texto;
+        div.appendChild(span);
+        const btn = document.createElement("button");
+        btn.innerText = "×";
+        btn.onclick = () => eliminarElemento(index);
+        div.appendChild(btn);
+        contenedor.appendChild(div);
+      });
+    }
+  
+    function reproducirFrase() {
+  if (frase.length === 0) {
+    const mensaje = crearMensajeVoz("Hola, quisiera pedir. Gracias.");
+    window.speechSynthesis.speak(mensaje);
+    return;
+  }
+
+  // Convertir los textos en un array de solo palabras
+  const palabras = frase.map(item => item.texto);
+
+  let texto = "";
+
+  if (palabras.length === 1) {
+    texto = "Hola, quisiera pedir " + palabras[0] + ". Gracias.";
+  } else if (palabras.length === 2) {
+    texto = "Hola, quisiera pedir " + palabras[0] + " y " + palabras[1] + ". Gracias.";
+  } else {
+    const ultimasDos = " y " + palabras[palabras.length - 1];
+    const anteriores = palabras.slice(0, -1).join(", ");
+    texto = "Hola, quisiera pedir " + anteriores + ultimasDos + ". Gracias.";
+  }
+
+  const mensaje = crearMensajeVoz(texto);
+  window.speechSynthesis.speak(mensaje);
+}
+  
+    function reproducirPalabra(texto) {
+      const mensaje = crearMensajeVoz(texto);
+      window.speechSynthesis.speak(mensaje);
+    }
+  
+    function crearMensajeVoz(texto) {
+      const mensaje = new SpeechSynthesisUtterance(texto);
+      mensaje.lang = "es-ES"; // Español neutro (cambia si usás voces del sistema)
+      mensaje.pitch = 1.2;     // Tono moderadamente agudo
+      mensaje.rate = 0.95;     // Velocidad más lenta para mayor comprensión
+      mensaje.volume = 1.0;    // Volumen máximo
+  
+      // Buscar la mejor voz disponible
+      const voces = window.speechSynthesis.getVoices();
+      const vozAmable = voces.find(v =>
+        v.name.toLowerCase().includes("luciana") ||
+        v.name.toLowerCase().includes("pablo") ||
+        v.name.toLowerCase().includes("google español") ||
+        v.lang.toLowerCase().includes("es")
+      );
+      if (vozAmable) {
+        mensaje.voice = vozAmable;
+      }
+      return mensaje;
+    }
+  
+    // Asegura la carga de voces al principio
+    if (typeof speechSynthesis !== 'undefined') {
+      speechSynthesis.onvoiceschanged = () => {};
+    }
+  
+    function limpiarFrase() {
+      frase = [];
+      actualizarFrase();
+    }
+  </script>
+  
+</body>
+</html>
+
