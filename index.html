@@ -5,236 +5,304 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carta Inclusiva con Pictogramas - Municipalidad de Maipú</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #ffe3be;
-      margin: 0;
-      padding: 15px 10px 30px;
-      color: #000000;
-
-    }
-    header {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    header img {
-      width: 90px;
-      max-width: 100%;
-      height: auto;
-    }
-    h1 {
-      font-size: 26px;
-      color: #2c3e50;
-      margin: 10px 0 0;
-      font-weight: 700;
-    }
-    .frase-titulo {
-      text-align: center;
-      font-weight: 700;
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: #34495e;
-    }
-    .frase-container {
-      margin: 0 auto 20px;
-      padding: 12px 15px;
-      background: #fff8dc;
-      border-radius: 14px;
-      min-height: 70px;
-      max-width: 620px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    .frase-item {
-      background: #fff;
-      border: 2px solid #ccc;
-      border-radius: 14px;
-      padding: 6px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      width: 75px;
-    }
-    .frase-item img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    .frase-item span {
-      font-size: 14px;
-      margin-top: 6px;
-      text-align: center;
-      color: #2c3e50;
-      font-weight: 600;
-    }
-    .frase-item button {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      background: #e74c3c;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 22px;
-      height: 22px;
-      font-size: 16px;
-      cursor: pointer;
-      padding: 0;
-    }
-    .acciones {
-  text-align: center;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Por si se achica la pantalla */
-  gap: 10px; /* Espacio entre botones */
-}
-
-.acciones button {
-  padding: 12px 28px;
-  font-size: 17px;
-  border: none;
-  border-radius: 16px;
-  background-color: #ff653f;
-  color: #0b0e11;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 10px;
-}
-.acciones .repro {
-  background-color: #55d626e1;
-  color: #0b0e11;
-}
-    .categoria {
-      margin-bottom: 40px;
-      max-width: 620px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .categoria h2 {
-      font-size: 20px;
-      margin-bottom: 18px;
-      color: #34495e;
-      border-bottom: 3px solid #f9d342;
-      padding-bottom: 6px;
-      font-weight: 700;
-    }
-    .pictogramas-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-    }
-    .pictograma {
-      background-color: #ffffff;
-      border-radius: 18px;
-      text-align: center;
-      padding: 12px 8px;
-      cursor: pointer;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
-      width: 150px;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .pictograma img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: 8px;
-    }
-    .pictograma span {
-      font-weight: 700;
-      font-size: 14px;
-      color: #2c3e50;
-    }
-    #frase:empty {
-  display: none;
-}
-    @media (max-width: 600px) {
-      
-      .frase-item {
-        width: 60px;
-      }
-      .frase-item span {
-        font-size: 12px;
-      }
-      .pictograma {
-        width: 100px;
-        height: 110px;
-        padding: 10px 6px;
-      }
-      .pictograma img {
-        width: 80px;
-        height: 80px;
-      }
-      .pictograma span {
-        font-size: 12px;
-      }
-      html{
-        font-size: 8px;
-      }
-    }
-    footer{
-      margin-bottom: 0;
-    }
-    .footer-picto {
-  background-color: #fff8dc;
-  border-top: 3px solid #f9d342;
-  padding: 20px 10px;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 0;
- 
-}
-
-.footer-picto {
-  background-color: #fffff5;
-  border-top: 2px solid #f9d342;
-  padding: 8px 8px;
-  text-align: center;
-  margin-top: 10px;
-
-  margin-bottom: 0; /* Elimina cualquier margen inferior */
-}
-
-
-.footer-picto .proyecto {
-  color: #e8672b;
-  font-weight: bold;
-}
-
-@media (max-width: 600px) {
-  .footer-picto p {
-    font-size: 14px;
-    font-weight: bolder;
+<style>
+  * {
+    box-sizing: border-box;
   }
-}
- 
+  
+  body { 
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #e9faff;
+    
+    margin: 0;
+    padding: 15px 10px 30px;
+    color: #000000;
+  }
+   
+  /* ENCABEZADO */
+  .encabezado-azul {
+    background-color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .logos-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .logo-maipu {
+    width: 80px;
+    height: auto;
+  }
+  
+  .logo-hola {
+    width: 60px;
+    height: auto;
+    animation: saludoAnimado 2s infinite ease-in-out;
+  }
+  
+  @keyframes saludoAnimado {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(3deg); }
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #0077b6;
+    margin: 10px 0 0;
+    font-weight: 800;
+  }
+  
+  /* FRASE */
+  .frase-titulo {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #023e8a;
+    margin: 20px 0 10px;
+  }
+  
+  .frase-container {
+    margin: 0 auto 20px;
+    padding: 12px 15px;
+    background: #ffffff;
+    border-radius: 14px;
+    min-height: 70px;
+    max-width: 620px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  #frase:empty {
+    display: none;
+  }
+  
+  .frase-item {
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 14px;
+    padding: 6px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 75px;
+  }
+  
+  .frase-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .frase-item span {
+    font-size: 14px;
+    margin-top: 6px;
+    text-align: center;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .frase-item button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  /* ACCIONES */
+  .acciones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px 0 30px;
+  }
+  
+  .acciones button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .acciones button:hover {
+    transform: scale(1.05);
+  }
+  
+  .acciones .repro {
+    background-color: #90e0ef;
+    color: #000;
+  }
+  
+  .acciones button:last-child {
+    background-color: #ffcf56;
+    color: #000;
+  }
+  
+  /* CATEGORÍAS */
+  .categoria {
+    margin-bottom: 40px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .categoria h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: #34495e;
+    border-bottom: 3px solid #f9d342;
+    padding-bottom: 6px;
+    font-weight: 700;
+  }
+  
+  .pictogramas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+  
+  .pictograma {
+    background-color: #ffffff;
+    border-radius: 18px;
+    text-align: center;
+    padding: 12px 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pictograma img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 8px;
+  }
+  
+  .pictograma span {
+    font-weight: 700;
+    font-size: 14px;
+    color: #2c3e50;
+  }
+  
+  /* FOOTER */
+  .footer-picto {
+    background-color: #fffff5;
+    border-top: 2px solid #f9d342;
+    padding: 10px 8px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  
+  .footer-picto .proyecto {
+    color: #e8672b;
+    font-weight: bold;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 22px;
+    }
+  
+    .logo-maipu, .logo-hola {
+      width: 55px;
+    }
+  
+    .frase-titulo {
+      font-size: 18px;
+    }
+  
+    .frase-item {
+      width: 60px;
+    }
+  
+    .frase-item span {
+      font-size: 12px;
+    }
+  
+    .acciones button {
+      font-size: 16px;
+      padding: 10px 16px;
+    }
+  
+    .pictograma {
+      width: 100px;
+      height: 110px;
+      padding: 10px 6px;
+    }
+  
+    .pictograma img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .pictograma span {
+      font-size: 12px;
+    }
+  
+    .footer-picto p {
+      font-size: 14px;
+      font-weight: bolder;
+    }
+  
+    html {
+      font-size: 8px;
+    }
+  }
+  
+
     
   </style>
 </head>
 <body>
-  <header>
-    <img src="./imagenes/hola.png" alt="Logo Municipalidad de Maipú" />
-    <h1>Bienvenidos al Menu Azul</h1>
-  </header>
-  <div class="frase-titulo">Quisiera pedir...</div>
-  <div class="frase-container" id="frase"></div>
+  <header class="encabezado-azul">
+    <div class="logos-header">
+      <img src="./imagenes/logo.png" alt="Logo Municipalidad de Maipú" class="logo-maipu" />
+      <img src="./imagenes/hola.png" alt="Pictograma de saludo" class="logo-hola" />
+    </div>
+    <h1>👋 Bienvenidos al Menú Azul</h1>
+    
+  <div class="frase-titulo">🧩 Quisiera pedir...</div>
+ 
   <div class="acciones">
     <button class="repro" onclick="reproducirFrase()">🔊 Reproducir</button>
     <button onclick="limpiarFrase()">🗑️ Limpiar</button>
   </div>
+  <div class="frase-container" id="frase"></div>
+  </header>
+  
+  
   <section class="categoria">
     <h2>COMIDAS</h2>
     <div class="pictogramas-container">
@@ -248,7 +316,7 @@
         <span>pancho</span>
       </div>
        
-      <div class="pictograma" onclick="agregarPictograma('lomos', './imagenes/lomos.jfif')">
+      <div class="pictograma" onclick="agregarPictograma('lomo', './imagenes/lomos.jfif')">
         <img src="./imagenes/lomos.jfif" alt="lomos" />
         <span>Lomo</span>
       </div>
@@ -332,14 +400,6 @@
   <section class="categoria">
     <h2>FRASES</h2>
     <div class="pictogramas-container">
-      <div class="pictograma" onclick="agregarPictograma('hola', './imagenes/hola.png')">
-        <img src="./imagenes/hola.png" alt="hola" />
-        <span>HOLA</span>
-      </div>
-      <div class="pictograma" onclick="agregarPictograma('gracias', './imagenes/gracias.png')">
-        <img src="./imagenes/gracias.png" alt="gracias" />
-        <span>GRACIAS</span>
-      </div>
       
       <div class="pictograma" onclick="agregarPictograma('chau', './imagenes/chau.png')">
         <img src="./imagenes/chau.png" alt="chau" />
